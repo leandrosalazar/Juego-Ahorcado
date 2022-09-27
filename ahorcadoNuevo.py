@@ -1,7 +1,28 @@
 import os
 from getpass import getpass
+print()
 print("***INGRESAR UNA PALABRA PARA EL AHORCADO***")
+print()
+print("***LA PALABRA SERÁ INVISIBLE PARA QUE LA OTRA PERSONA NO LA VEA***")
+print()
+print("***PUEDE OPTAR POR VERLA AHORA PARA CORREGIRLA, O SEGUIR CON LA MISMA PALABRA***")
+print()
 palabra = getpass("INGRESE AQUÍ: ")
+opcion = input("¿Queres ver la palabra que escribiste? S/N: ")
+if opcion.upper() == "S":
+    segundaOpcion = input(f"La palabra que escribiste fue {palabra}. ¿Quieres cambiarla? S/N: ")
+    if segundaOpcion.upper() == "S":
+        palabra = getpass("Escribí de nuevo tu palabra u otra que quieras: ")
+    elif segundaOpcion.upper() == "N":
+        print("***GENIAL, COMENCEMOS***")
+    else:
+        print("Me queres romper el sistema papu? Nos vemos -.-")
+        quit()
+elif opcion.upper() == "N":
+    print("***GENIAL, COMENCEMOS***")
+else:
+    print("Me queres romper el sistema papu? Nos vemos -.-")
+    quit()
 palabralista = list(palabra)
 ahorca = ["         !=======(A)",
          "                  (H)",
